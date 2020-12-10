@@ -94,6 +94,17 @@
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 <!-- Latest compiled and minified JavaScript -->
 <script src="bootstrap/js/jquery.min.js"></script>
+
+<style type="text/css">
+/* TEMP HIDE SOME COLUMNS */	
+table tr:nth-child(6),
+table tr:nth-child(7),
+table tr:nth-child(8) {
+	display: none;
+}
+
+</style>
+
 </head>
 <body>
 <div class="navbar navbar-default navbar-static-top" role="navigation">
@@ -203,6 +214,36 @@ function calculations(){
 			case "Común":
 				// code				
 				switch(currentLevel) {
+					case "1":
+						// code
+						topCardsNextLevel = 2;
+						var level13TotalCards = 9586;
+						break;
+
+					case "2":
+						// code
+						topCardsNextLevel = 4;
+						var level13TotalCards = 9584;
+						break;
+
+					case "3":
+						// code
+						topCardsNextLevel = 10;
+						var level13TotalCards = 9580;
+						break;
+
+					case "4":
+						// code
+						topCardsNextLevel = 20;
+						var level13TotalCards = 9570;
+						break;
+
+					case "5":
+						// code
+						topCardsNextLevel = 50;
+						var level13TotalCards = 9550;
+						break;
+
 					case "6":
 						// code
 						topCardsNextLevel = 100;
@@ -252,37 +293,44 @@ function calculations(){
 				switch(currentLevel) {
 					case "6":
 						// code
-						topCardsNextLevel = 100;
+						topCardsNextLevel = 20;
+						var level13TotalCards = 2570;
 						break;
 
 					case "7":
 						// code
-						topCardsNextLevel = 200;
+						topCardsNextLevel = 50;
+						var level13TotalCards = 2550;
 						break;
 
 					case "8":
 						// code
-						topCardsNextLevel = 400;
+						topCardsNextLevel = 100;
+						var level13TotalCards = 2500;
 						break;
 
 					case "9":
 						// code
-						topCardsNextLevel = 800;
+						topCardsNextLevel = 200;
+						var level13TotalCards = 2400;
 						break;
 
 					case "10":
 						// code
-						topCardsNextLevel = 1000;
+						topCardsNextLevel = 400;
+						var level13TotalCards = 2200;
 						break;
 
 					case "11":
 						// code
-						topCardsNextLevel = 2000;
+						topCardsNextLevel = 800;
+						var level13TotalCards = 1800;
 						break;
 
 					case "12":
 						// code
-						topCardsNextLevel = 5000;
+						topCardsNextLevel = 1000;
+						var level13TotalCards = 1000;
 						break;
 				}
 				break;
@@ -292,37 +340,44 @@ function calculations(){
 				switch(currentLevel) {
 					case "6":
 						// code
-						topCardsNextLevel = 100;
+						topCardsNextLevel = 2;
+						var level13TotalCards = 386;
 						break;
 
 					case "7":
 						// code
-						topCardsNextLevel = 200;
+						topCardsNextLevel = 4;
+						var level13TotalCards = 384;
 						break;
 
 					case "8":
 						// code
-						topCardsNextLevel = 400;
+						topCardsNextLevel = 10;
+						var level13TotalCards = 380;
 						break;
 
 					case "9":
 						// code
-						topCardsNextLevel = 800;
+						topCardsNextLevel = 20;
+						var level13TotalCards = 370;
 						break;
 
 					case "10":
 						// code
-						topCardsNextLevel = 1000;
+						topCardsNextLevel = 50;
+						var level13TotalCards = 350;
 						break;
 
 					case "11":
 						// code
-						topCardsNextLevel = 2000;
+						topCardsNextLevel = 100;
+						var level13TotalCards = 300;
 						break;
 
 					case "12":
 						// code
-						topCardsNextLevel = 5000;
+						topCardsNextLevel = 200;
+						var level13TotalCards = 200;
 						break;
 				}
 				break;
@@ -330,39 +385,28 @@ function calculations(){
 			case "Legendaria":
 				// code
 				switch(currentLevel) {
-					case "6":
-						// code
-						topCardsNextLevel = 100;
-						break;
-
-					case "7":
-						// code
-						topCardsNextLevel = 200;
-						break;
-
-					case "8":
-						// code
-						topCardsNextLevel = 400;
-						break;
-
 					case "9":
 						// code
-						topCardsNextLevel = 800;
+						topCardsNextLevel = 2;
+						var level13TotalCards = 36;
 						break;
 
 					case "10":
 						// code
-						topCardsNextLevel = 1000;
+						topCardsNextLevel = 4;
+						var level13TotalCards = 34;
 						break;
 
 					case "11":
 						// code
-						topCardsNextLevel = 2000;
+						topCardsNextLevel = 10;
+						var level13TotalCards = 30;
 						break;
 
 					case "12":
 						// code
-						topCardsNextLevel = 5000;
+						topCardsNextLevel = 20;
+						var level13TotalCards = 20;
 						break;
 				}				
 				break;
@@ -374,8 +418,24 @@ function calculations(){
 		document.querySelector(".card_level13").value = finalLevelUnits;
 	}
 
-
+	// REVIEW CALCULATIONS
 	switch(currentLevel) {
+		case "1":
+			finalLevelGold = 185625;
+			break;
+		case "2":
+			finalLevelGold = 185620;
+			break;
+		case "3":
+			finalLevelGold = 185600;
+			break;
+		case "4":
+			finalLevelGold = 185550;
+			break;
+		case "5":
+			finalLevelGold = 185400;
+			break;
+
 		case "6":
 			// code
 			finalLevelGold = 185000;

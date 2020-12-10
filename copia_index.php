@@ -53,18 +53,6 @@ table th {
 table tr {
     background-color: #ffffff;
 }
-table tr.Común  {
-    background-color: #91daf2;
-}
-table tr.Especial {
-        background-color: rgb(255 93 8 / 51%);
-}
-table tr.Épica  {
-  background-color: #ae6ddfd4;
-}
-table tr.Legendaria {
-  background-color: #cacaca;
-}
 table td {
     font-size: 12px;
     border-width: 1px;
@@ -75,56 +63,6 @@ table td {
 table tr:hover {
     background-color: #ffff99;
 }
-
-
-/* HIDE NEXT LEVEL COLUMN */
-tr>th:nth-child(6), 
-tr>td:nth-child(6) {
-    display: none;
-}
-tr>th:nth-child(3), 
-tr>td:nth-child(3) {
-    width: 80px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(4), 
-tr>td:nth-child(4) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(5), 
-tr>td:nth-child(5) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(6), 
-tr>td:nth-child(6) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(7), 
-tr>td:nth-child(7) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(8), 
-tr>td:nth-child(8) {
-    width: 90px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(9), 
-tr>td:nth-child(9) {
-    width: 290px;
-    text-align: center;
-    font-weight: bold;
-}
-
 </style>
 
 <body>
@@ -178,7 +116,7 @@ tr>td:nth-child(9) {
       ?>
 
 			<tr  class="colorClass <?php echo $card_Tipo ?> ">
-				<td><img src="imagenes/<?php echo $row['card_Img']; ?>" width="80" alt="<?php echo $card_Nombre ?>" /></td>
+				<td><img src="imagenes/<?php echo $row['card_Img']; ?>" width="50" alt="<?php echo $card_Nombre ?>" /></td>
 				<td><?php echo $card_Nombre ?></td>
 				<td><?php echo $card_Tipo ?></td>
 				<td><?php echo $card_Nivel ?></td>
@@ -188,7 +126,7 @@ tr>td:nth-child(9) {
 				<td><?php echo $card_OroTotal ?></td>
 				<td>
 					<span> 
-      					<a class="btn btn-info" href="EditarImagen.php?edit_id=<?php echo $row['card_ID']; ?>" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+      					<a class="btn btn-info" href="EditarImagen.php?edit_id=<?php echo $row['card_ID']; ?>" title="click for edit" onclick="return confirm('Esta seguro de editar el archivo ?')"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
       					<a class="btn btn-danger" href="?delete_id=<?php echo $row['card_ID']; ?>" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
       				</span>
       			</td>
@@ -228,12 +166,6 @@ document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() =
         .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
         .forEach(tr => table.appendChild(tr) );
 })));
-
-
-// TEST EDIT IN SAME PAGE
-function editCard() {
-  console.log("editando ia ia o");
-}
 
 </script>
 
