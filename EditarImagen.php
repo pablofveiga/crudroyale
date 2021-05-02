@@ -89,7 +89,7 @@ if(isset($_POST['btn_save_updates']))
 		if($stmt->execute()){
 			?>
 <script>
-			alert('Archivo editado correctamente ...');
+			// alert('Archivo editado correctamente ...');
 			window.location.href='index.php';
 			</script>
 <?php
@@ -167,7 +167,7 @@ if(isset($_POST['btn_save_updates']))
       </tr>      
       <tr>
         <td><label class="control-label">Cantidad:</label></td>
-        <td><input class="form-control card_cantidad" type="text" name="card_cantidad" value="<?php echo $card_Cantidad; ?>" /></td>
+        <td><input class="form-control card_cantidad" type="number" name="card_cantidad" value="<?php echo $card_Cantidad; ?>" /></td>
       </tr>
       <tr style="display: none;">
         <td><label class="control-label">Sig. Nivel:</label></td>
@@ -473,6 +473,9 @@ function calculations(){
 			break;
 	}	
 	document.querySelector(".card_orototal").value = finalLevelGold;
+
+	// let valorUd;
+	// let compra = document.querySelector(".card_Cantidad").value * valorUd;
 
 	return true;
 

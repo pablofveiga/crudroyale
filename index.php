@@ -30,100 +30,10 @@ if(isset($_GET['delete_id']))
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 <script src="bootstrap/js/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <style type="text/css">
-table {
-    font-size: 12px;
-    color: #333333;
-    width: 100%;
-    border-width: 1px;
-    border-color: #729ea5;
-    border-collapse: collapse;
-}
-table th {
-    font-size: 12px;
-    background-color: #acc8cc;
-    border-width: 1px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #729ea5;
-    text-align: left;
-    cursor: pointer;
-}
-table tr {
-    background-color: #ffffff;
-}
-table tr.Común  {
-    background-color: #91daf2;
-}
-table tr.Especial {
-        background-color: rgb(255 93 8 / 51%);
-}
-table tr.Épica  {
-  background-color: #ae6ddfd4;
-}
-table tr.Legendaria {
-  background-color: #cacaca;
-}
-table td {
-    font-size: 12px;
-    border-width: 1px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #729ea5;
-}
-table tr:hover {
-    background-color: #ffff99;
-}
-
-
-/* HIDE NEXT LEVEL COLUMN */
-tr>th:nth-child(6), 
-tr>td:nth-child(6) {
-    display: none;
-}
-tr>th:nth-child(3), 
-tr>td:nth-child(3) {
-    width: 80px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(4), 
-tr>td:nth-child(4) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(5), 
-tr>td:nth-child(5) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(6), 
-tr>td:nth-child(6) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(7), 
-tr>td:nth-child(7) {
-    width: 70px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(8), 
-tr>td:nth-child(8) {
-    width: 90px;
-    text-align: center;
-    font-weight: bold;
-}
-tr>th:nth-child(9), 
-tr>td:nth-child(9) {
-    width: 290px;
-    text-align: center;
-    font-weight: bold;
-}
 
 </style>
 
@@ -136,9 +46,170 @@ tr>td:nth-child(9) {
 <div class="container">
   <div class="page-header">
     <h1 class="h2">Mostrar todos. / <a class="btn btn-default" href="AgregarNuevo.php"> <span class="glyphicon glyphicon-plus"></span> &nbsp; Agregar nuevo</a></h1>
+
+    <div class="header__buttons">
+      <a href="#" class="ctaComun">Comunes</a>
+      <a href="#" class="ctaEspe">Especiales</a>
+      <a href="#" class="ctaEpic">Épicas</a>
+      <a href="#" class="ctaLegend">Legendarias</a>
+      <a href="#" class="ctaAll">Todas</a>
+    </div>
   </div>
+
+
   <br />
-  <table border="1">
+
+  <div class="results">
+    <span id="calc13">CALCULA</span>
+    <div id="total13suma"></div>
+  </div>
+
+  <div class="tablaEjemplo">
+    <table class="GeneratedTable">
+      <thead>
+        <tr>
+          <th>-</th>
+          <th>II</th>
+          <th>III</th>
+          <th>IV</th>
+          <th>V</th>
+          <th>VI</th>
+          <th>VII</th>
+          <th>VIII</th>
+          <th>IX</th>
+          <th>X</th>
+          <th>XI</th>
+          <th>XII</th>
+          <th>XIII</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background-color: #a1d0dc;">
+          <td rowspan="2">Común</td>
+          <td>2</td>
+          <td>4</td>
+          <td>10</td>
+          <td>20</td>
+          <td>50</td>
+          <td>100</td>
+          <td>200</td>
+          <td>400</td>
+          <td>800</td>
+          <td>1000</td>
+          <td>2000</td>
+          <td>5000</td>
+        </tr>
+        <tr style="background-color: #a1d0dc;">
+          <!-- <td>Cell</td> -->
+          <td>9586</td>
+          <td>9584</td>
+          <td>9580</td>
+          <td>9570</td>
+          <td>9550</td>
+          <td>9500</td>
+          <td>9400</td>
+          <td>9200</td>
+          <td>8800</td>
+          <td>8000</td>
+          <td>7000</td>
+          <td>5000</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Especial</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td>20</td>
+          <td>50</td>
+          <td>100</td>
+          <td>200</td>
+          <td>400</td>
+          <td>800</td>
+          <td>1000</td>
+        </tr>
+        <tr>
+          <!-- <td>Cell</td> -->
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td>2570</td>
+          <td>2550</td>
+          <td>2500</td>
+          <td>2400</td>
+          <td>2200</td>
+          <td>1800</td>
+          <td>1000</td>
+        </tr>
+        <tr  style="background-color: #c5a1dc;">
+          <td rowspan="2">Épica</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td>2</td>
+          <td>4</td>
+          <td>10</td>
+          <td>20</td>
+          <td>50</td>
+          <td>100</td>
+          <td>200</td>
+        </tr>
+        <tr  style="background-color: #c5a1dc;">
+          <!-- <td>Cell</td> -->
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td>386</td>
+          <td>384</td>
+          <td>380</td>
+          <td>370</td>
+          <td>350</td>
+          <td>300</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Legendaria</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td>2</td>
+          <td>4</td>
+          <td>10</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <!-- <td>Cell</td> -->
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td class="null">x</td>
+          <td>36</td>
+          <td>34</td>
+          <td>30</td>
+          <td>20</td>
+        </tr>
+      </tbody>
+    </table>  
+  </div>
+
+
+  <table border="1" class="royaleTable" id="crudroyale">
     <tr>
     	<th>Imagen</th>
       <th>Carta</th>
@@ -182,9 +253,9 @@ tr>td:nth-child(9) {
 				<td><?php echo $card_Nombre ?></td>
 				<td><?php echo $card_Tipo ?></td>
 				<td><?php echo $card_Nivel ?></td>
-				<td><?php echo $card_Cantidad ?></td>
+				<td style="font-weight: bolder;color: green;"><?php echo $card_Cantidad ?></td>
 				<td><?php echo $card_NextLevel ?></td>
-				<td><?php echo $card_Lavel13 ?></td>
+				<td style="color: red;"><?php echo $card_Lavel13 ?></td>
 				<td><?php echo $card_OroTotal ?></td>
 				<td>
 					<span> 
@@ -206,36 +277,731 @@ tr>td:nth-child(9) {
 	}
 	
 ?>
+
   </table>
 
+  <br>
 
+<table class="totalesTabla royaleTable">
+    <tr class="resumen">
+        <td><span id="calcs">Calcular</span></td>
+        <td>XXXX</td>
+        <td>XXXX</td>
+        <td>XXXX</td>
+        <td>Uds. Totales: </td>
+        <td></td>
+        <td>Resto N13:</td>
+        <td>Oro Total:</td>
+        <td>Progreso:</td>
+    </tr>
+    <tr>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td><span id="totalUnits"></span></td>
+        <td></td>
+        <td><span id="totalLefts"></span></td>
+        <td><span id="totalGold"></span></td>
+        <td><span id="actualPercent"></span> %</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="text-align: center;">Registros Viejos</td>    
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>---</td>
+        <td>---</td>
+        <td>Calidad: </td>
+        <td>Uds. Totales</td>
+        <td></td>
+        <td>Resto N13</td>
+        <td>Oro Total</td>
+        <td>Progreso</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/02/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>156,377</td>
+        <td></td>
+        <td>42,009</td>
+        <td>4,103,625</td>
+        <td>78.82 %</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/02/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>35,843</td>
+        <td></td>
+        <td>16,227</td>
+        <td>3,988,000</td>
+        <td>68.84 %</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/02/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>2,859</td>
+        <td></td>
+        <td>6,453</td>
+        <td>4,537,000</td>
+        <td>30.70 %</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/02/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>78</td>
+        <td></td>
+        <td>492</td>
+        <td>2,846,000</td>
+        <td>13.68 %</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/02/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>195,157</td>
+        <td></td>
+        <td>65,181</td>
+        <td>15,474,625</td>
+        <td>74.96 %</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/02/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>159,565</td>
+        <td></td>
+        <td>38,821</td>
+        <td>4,103,625</td>
+        <td>80.43 % - Compra: 388,210</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/02/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>36,221</td>
+        <td></td>
+        <td>15,849</td>
+        <td>3,988,000</td>
+        <td>69.56 % - Compra: 1,584,900</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/02/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>2,880</td>
+        <td></td>
+        <td>6,432</td>
+        <td>4,537,000</td>
+        <td>30.93 % - Compra: 6,432,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/02/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>78</td>
+        <td></td>
+        <td>492</td>
+        <td>2,846,000</td>
+        <td>13.68 % - Compra: 19,680,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/02/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>198,744</td>
+        <td></td>
+        <td>61,594</td>
+        <td>15,474,625</td>
+        <td>76.34 % - Compra: 28,085,110</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>    
+    <tr>
+        <td>Fecha:</td>
+        <td>01/03/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>161,934</td>
+        <td></td>
+        <td>36,452</td>
+        <td>4,103,625</td>
+        <td>81.63 % - Compra: 364,520</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>01/03/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>36,392</td>
+        <td></td>
+        <td>15,678</td>
+        <td>3,988,000</td>
+        <td>69.89 % - Compra: 1,567,800</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>01/03/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>2,924</td>
+        <td></td>
+        <td>6,388</td>
+        <td>4,537,000</td>
+        <td>31.40 % - Compra: 6,388,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>01/03/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>80</td>
+        <td></td>
+        <td>490</td>
+        <td>2,846,000</td>
+        <td>14.04 % - Compra: 19,600,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>01/03/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>201,330</td>
+        <td></td>
+        <td>59,008</td>
+        <td>15,474,625</td>
+        <td>77.33 % - Compra: 27,920,320</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>      
+
+
+    <tr>
+        <td>Fecha:</td>
+        <td>08/03/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>164,654</td>
+        <td></td>
+        <td>33,732</td>
+        <td>4,103,625</td>
+        <td>83.00 % - Compra: 337,320</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>08/03/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>36,760</td>
+        <td></td>
+        <td>15,310</td>
+        <td>3,988,000</td>
+        <td>70.60 % - Compra: 1,531,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>08/03/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>2,993</td>
+        <td></td>
+        <td>6,319</td>
+        <td>4,537,000</td>
+        <td>32.14 % - Compra: 6,319,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>08/03/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>80</td>
+        <td></td>
+        <td>490</td>
+        <td>2,846,000</td>
+        <td>14.04 % - Compra: 19,600,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>08/03/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>204,487</td>
+        <td></td>
+        <td>55,851</td>
+        <td>15,474,625</td>
+        <td>78.55 % - Compra: 27,787,320</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>     
+
+    <tr>
+        <td>Fecha:</td>
+        <td>15/03/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>168,344</td>
+        <td></td>
+        <td>30,042</td>
+        <td>4,103,625</td>
+        <td>84.86 % - Compra: 300,420</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/03/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>37,333</td>
+        <td></td>
+        <td>14,737</td>
+        <td>3,988,000</td>
+        <td>71.70 % - Compra: 1,473,700</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/03/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>3,055</td>
+        <td></td>
+        <td>6,257</td>
+        <td>4,537,000</td>
+        <td>32.81 % - Compra: 6,257,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/03/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>83</td>
+        <td></td>
+        <td>487</td>
+        <td>2,846,000</td>
+        <td>14.56 % - Compra: 19,480,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>15/03/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>208,815</td>
+        <td></td>
+        <td>51,523</td>
+        <td>15,474,625</td>
+        <td>80.21 % - Compra: 27,511,120</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>     
+
+    <tr>
+        <td>Fecha:</td>
+        <td>22/03/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>171,013</td>
+        <td></td>
+        <td>27,373</td>
+        <td>4,103,625</td>
+        <td>86.20 % - Compra: 273,730</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/03/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>37,794</td>
+        <td></td>
+        <td>14,276</td>
+        <td>3,988,000</td>
+        <td>72.58 % - Compra: 1,427,600</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/03/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>3,088</td>
+        <td></td>
+        <td>6,224</td>
+        <td>4,537,000</td>
+        <td>33.16 % - Compra: 6,224,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/03/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>85</td>
+        <td></td>
+        <td>485</td>
+        <td>2,846,000</td>
+        <td>14.91 % - Compra: 19,400,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>22/03/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>211,980</td>
+        <td></td>
+        <td>48,358</td>
+        <td>15,474,625</td>
+        <td>80.21 % - Compra: 27,325,330</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>  
+
+    <tr>
+        <td>Fecha:</td>
+        <td>29/03/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>173,900</td>
+        <td></td>
+        <td>24,486</td>
+        <td>4,103,625</td>
+        <td>87.66 % - Compra: 244,860</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>29/03/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>38,353</td>
+        <td></td>
+        <td>13,717</td>
+        <td>3,988,000</td>
+        <td>73.66 % - Compra: 1,371,100</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>29/03/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>3,116</td>
+        <td></td>
+        <td>6,196</td>
+        <td>4,537,000</td>
+        <td>33.46 % - Compra: 6,196,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>29/03/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>88</td>
+        <td></td>
+        <td>482</td>
+        <td>2,846,000</td>
+        <td>14.91 % - Compra: 19,280,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>29/03/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>215,457</td>
+        <td></td>
+        <td>44,881</td>
+        <td>15,474,625</td>
+        <td>80.21 % - Compra: 27,091,960</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>  
+
+    <tr>
+        <td>Fecha:</td>
+        <td>06/04/21</td>
+        <td>---</td>
+        <td>Común: </td>
+        <td>175,755</td>
+        <td></td>
+        <td>22,631</td>
+        <td>4,103,625</td>
+        <td>88.59 % - Compra: 226,310</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>06/04/21</td>
+        <td>---</td>
+        <td>Especial: </td>
+        <td>38,497</td>
+        <td></td>
+        <td>13,573</td>
+        <td>3,988,000</td>
+        <td>73.93 % - Compra: 1,357,300</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>06/04/21</td>
+        <td>---</td>
+        <td>Épica: </td>
+        <td>3,000</td>
+        <td></td>
+        <td>5,962</td>
+        <td>4,367,000</td>
+        <td>33.47 % - Compra: 5,962,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>06/04/21</td>
+        <td>---</td>
+        <td>Legendaria: </td>
+        <td>88</td>
+        <td></td>
+        <td>482</td>
+        <td>2,846,000</td>
+        <td>15.44 % - Compra: 19,280,000</td>
+    </tr>
+    <tr>
+        <td>Fecha:</td>
+        <td>06/04/21</td>
+        <td>---</td>
+        <td>TODAS</td>
+        <td>215,457</td>
+        <td></td>
+        <td>44,881</td>
+        <td>15,474,625</td>
+        <td>80.21 % - Compra: 26,825,610</td>
+    </tr>
+    <tr>
+        <td colspan="9" style="background-color: black">---</td>
+    </tr>      
+</table>
+
+
+
+
+
+
+
+
+
+    <div class="information">
+      
+    </div>
+
+  <br>
+
+  <br>
+
+
+    <h3>Preferencias:</h3>
+    <ul>
+      <li>Bruja: -222 || Bluk: 113 || Sct: 81 </li>
+      <li>Bebé Dragón: -182 || Bluk: 97 || Sct: 74 </li>
+      <li>Príncipe: -195 || Bluk: 111 || Sct: 123 </li>
+      <li>Hielo: -228 || Bluk: 117 || Sct: 142 </li>
+      <li>Verdugo: -187 || Bluk: 145 || Sct: 92 </li>
+      <li>Ballesta: -266 || Bluk: 130 || Sct: 117 </li>
+      <li>----</li>
+      <li>Mega Caballero: -20 || Bluk: 13 || Sct: 5 </li>
+      <li>Bruja Nocturna: -25 || Bluk:  5 || Sct: 9 </li>
+      <li>Mago Eléctrico: -31 || Bluk:  8 || Sct: 9 </li>
+    </ul>
+
+<!--     <table border="1" class="royaleTable" id="caca">
+      <tbody>
+          <tr>
+              <th>Imagen</th>
+              <th>Carta</th>
+              <th>Calidad</th>
+              <th>Nivel</th>
+              <th>Cantidad</th>
+              <th>Sig. Nivel</th>
+              <th>Nivel 13</th>
+              <th>Total Oro</th>
+              <th>Acciones</th>
+         </tr>
+
+
+
+            <tr class="colorClass Épica ">
+                <td><img src="imagenes/621476.png" width="80" alt="Príncipe"></td>
+                <td>Príncipe</td>
+                <td>Épica</td>
+                <td>11</td>
+                <td>105</td>
+                <td>-5</td>
+                <td>195</td>
+                <td>150000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=111" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=111" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+            <tr class="colorClass Épica ">
+                <td><img src="imagenes/122596.png" width="80" alt="Bebé Dragón"></td>
+                <td>Bebé Dragón</td>
+                <td>Épica</td>
+                <td>11</td>
+                <td>118</td>
+                <td>-18</td>
+                <td>182</td>
+                <td>150000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=104" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=104" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>            
+            <tr class="colorClass Épica ">
+                <td><img src="imagenes/650190.png" width="80" alt="Bruja"></td>
+                <td>Bruja</td>
+                <td>Épica</td>
+                <td>11</td>
+                <td>78</td>
+                <td>22</td>
+                <td>222</td>
+                <td>150000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=110" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=110" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+            <tr class="colorClass Épica ">
+                <td><img src="imagenes/471185.png" width="80" alt="Hielo"></td>
+                <td>Hielo</td>
+                <td>Épica</td>
+                <td>10</td>
+                <td>122</td>
+                <td>-72</td>
+                <td>228</td>
+                <td>170000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=107" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=107" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+            <tr class="colorClass Épica ">
+                <td><img src="imagenes/134301.png" width="80" alt="Verdugo"></td>
+                <td>Verdugo</td>
+                <td>Épica</td>
+                <td>11</td>
+                <td>113</td>
+                <td>-13</td>
+                <td>187</td>
+                <td>150000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=113" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=113" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+            <tr class="colorClass Épica ">
+                <td><img src="imagenes/580520.png" width="80" alt="Ballesta"></td>
+                <td>Ballesta</td>
+                <td>Épica</td>
+                <td>8</td>
+                <td>114</td>
+                <td>-104</td>
+                <td>266</td>
+                <td>182000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=118" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=118" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+            <tr class="colorClass Legendaria ">
+                <td><img src="imagenes/391877.png" width="80" alt="Megacaballero"></td>
+                <td>Megacaballero</td>
+                <td>Legendaria</td>
+                <td>11</td>
+                <td>10</td>
+                <td>0</td>
+                <td>20</td>
+                <td>150000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=138" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=138" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+            <tr class="colorClass Legendaria ">
+                <td><img src="imagenes/375516.png" width="80" alt="Bruja Nocturna"></td>
+                <td>Bruja Nocturna</td>
+                <td>Legendaria</td>
+                <td>11</td>
+                <td>5</td>
+                <td>5</td>
+                <td>25</td>
+                <td>150000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=132" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=132" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+            <tr class="colorClass Legendaria ">
+                <td><img src="imagenes/97280.png" width="80" alt="Mago Eléctrico"></td>
+                <td>Mago Eléctrico</td>
+                <td>Legendaria</td>
+                <td>10</td>
+                <td>3</td>
+                <td>1</td>
+                <td>31</td>
+                <td>170000</td>
+                <td>
+                    <span> 
+                        <a class="btn btn-info" href="EditarImagen.php?edit_id=131" title="click for edit" onclick="editCard()"><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+                        <a class="btn btn-danger" href="?delete_id=131" title="click for delete" onclick="return confirm('Esta seguro de eliminar el archivo?')"><span class="glyphicon glyphicon-remove-circle"></span> Borrar</a> 
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table> -->
 </div>
+
+<a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+
+
+
+
+</body>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
+<script type="text/javascript" src="funciones.js"></script>
 
 <script>
-// NEW
-const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
-
-const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
-    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
-
-// do the work...
-document.querySelectorAll('th').forEach(th => th.addEventListener('click', (() => {
-    const table = th.closest('table');
-    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-        .forEach(tr => table.appendChild(tr) );
-})));
-
-
-// TEST EDIT IN SAME PAGE
-function editCard() {
-  console.log("editando ia ia o");
-}
 
 </script>
 
-</body>
 </html>
