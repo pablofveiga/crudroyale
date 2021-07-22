@@ -174,30 +174,3 @@ $(document).ready(function() {
     });
 
 });
-
-
-$("#soloComun").click(function(e){
-    e.preventDefault();
-    $(".Épica").hide();
-    $(".Especial").hide();
-    $(".Legendaria ").hide();
-    $(".Común").show();
-})
-$("#soloEspecial").click(function(){
-    $(".Común").hide();
-    $(".Épica").hide();    
-    $(".Legendaria ").hide();
-    $(".Especial").show();
-})
-$("#soloEpica").click(function(){
-    $(".Común").hide();
-    $(".Especial").hide();
-    $(".Legendaria ").hide();
-    $(".Épica ").show();
-})
-$("#soloLegendaria").click(function(){
-    $(".Común").hide();
-    $(".Épica").hide();
-    $(".Especial").hide();
-    $(".Legendaria ").show();
-})

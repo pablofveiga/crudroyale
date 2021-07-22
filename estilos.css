@@ -173,3 +173,13 @@ span#calcs:hover {
     background-color: #DDF;
     color: #000;
 }
+
+
+table.infotable {
+    border: 1px solid;
+}
+table.infotable td {
+    border: 1px solid;
+    text-align: center;
+    line-height: 1;
+}
