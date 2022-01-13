@@ -141,6 +141,35 @@ $("#calcs").click(function(){
   })
   $("#totalLefts").text(number_format(totalLefts));  
 
+  // TOTAL BUY
+  var valorBuy = 0;
+  var valorMultiplier = 0;
+  $("table#crudroyale tr.colorClass").each(function(){
+    if ( $(this).is(":visible")  ) { 
+
+        _calidad = $(this).attr("class");
+       
+        if (_calidad.includes("Común")) {
+            valorMultiplier = 10;        
+        } else if (_calidad.includes("Especial")) {
+            valorMultiplier = 100;
+        } else if (_calidad.includes("Épica")) {
+            valorMultiplier = 1000;
+        } else if (_calidad.includes("Legendaria")) {
+            valorMultiplier = 40000;
+        }
+        return valorMultiplier;
+
+    }
+
+
+
+
+  })
+  valorBuy = totalLefts * valorMultiplier;
+  $("#totalPurchase").text(number_format(valorBuy));  
+
+
   var totalGold = 0;
   $("#crudroyale tbody tr > td:nth-child(8)").each(function(){
     if ( $(this).is(":visible")  ) {

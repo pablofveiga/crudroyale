@@ -300,7 +300,7 @@ if(isset($_GET['delete_id']))
     <tr class="resumen">
         <td><span id="calcs">Calcular</span></td>
         <td>XXXX</td>
-        <td>XXXX</td>
+        <td>Valor Compra:</td>
         <td>XXXX</td>
         <td>Uds. Totales: </td>
         <td></td>
@@ -311,7 +311,7 @@ if(isset($_GET['delete_id']))
     <tr>
         <td>---</td>
         <td>---</td>
-        <td>---</td>
+        <td><span id="totalPurchase"></span></td>
         <td>---</td>
         <td><span id="totalUnits"></span></td>
         <td></td>
